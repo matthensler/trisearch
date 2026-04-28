@@ -51,33 +51,33 @@ html{scroll-behavior:smooth;}
 body{font-family:'Syne',sans-serif;background:var(--deep);color:#fff;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
 img,svg{display:block;}a{color:inherit;}
 
-.logo-img{height:30px;width:auto;display:block;flex-shrink:0;}
-.footer-logo-img{height:22px;width:auto;display:block;}
+
+
 .skip{position:absolute;top:-100px;left:12px;z-index:999;background:var(--blue);color:#fff;padding:10px 18px;border-radius:0 0 8px 8px;font-weight:700;text-decoration:none;transition:top .2s;}.skip:focus{top:0;}
-nav.primary{position:fixed;inset:0 0 auto;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 20px;height:60px;background:rgba(7,15,34,0.96);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border);transition:height .3s;}
-.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;height:60px;}
-.nav-links{display:none;align-items:center;gap:24px;}
-.nav-links a{color:rgba(255,255,255,0.55);text-decoration:none;font-size:0.82rem;font-weight:500;height:60px;display:inline-flex;align-items:center;transition:color .2s;border-bottom:2px solid transparent;}
-.nav-links a:hover,.nav-links a.active{color:#fff;}
-.nav-links a.active{border-bottom-color:var(--light);}
-.nav-cta-btn{display:none;align-items:center;gap:7px;background:var(--blue);color:#fff;padding:0 16px;height:36px;border-radius:var(--r);font-weight:700;font-size:0.8rem;text-decoration:none;white-space:nowrap;transition:background .2s;}
-.nav-cta-btn:hover{background:var(--bright);}
-.nav-right{display:flex;align-items:center;gap:8px;}
-.ham{display:flex;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:8px;width:44px;height:44px;border-radius:var(--r);}
-.ham span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;transition:all .3s;}
-.ham.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
-.ham.open span:nth-child(2){opacity:0;}
-.ham.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
-#nav-drawer{display:none;position:fixed;top:60px;left:0;right:0;bottom:0;z-index:190;background:rgba(7,15,34,0.98);backdrop-filter:blur(20px);flex-direction:column;padding:24px;gap:4px;overflow-y:auto;}
-#nav-drawer.open{display:flex;}
-#nav-drawer a{color:rgba(255,255,255,0.8);text-decoration:none;font-size:1.05rem;font-weight:700;padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.07);display:block;}
-#nav-drawer a:hover{color:#fff;}
-#nav-drawer .drawer-cta{margin-top:16px;background:var(--blue);color:#fff;text-align:center;border-radius:var(--r);border-bottom:none;padding:16px;display:block;}
-@media(min-width:768px){nav.primary{padding:0 48px;}.nav-links{display:flex;}.nav-cta-btn{display:inline-flex;}.ham{display:none;}#nav-drawer{display:none !important;}}
-.sticky-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:180;background:rgba(11,22,48,0.98);border-top:1px solid rgba(255,255,255,0.1);padding:12px 16px;gap:10px;}
-.sticky-bar a{flex:1;display:flex;align-items:center;justify-content:center;height:var(--tap);border-radius:var(--r);font-weight:700;font-size:0.85rem;text-decoration:none;}
-.sb-primary{background:var(--blue);color:#fff;}.sb-ghost{border:1px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.8);}
-@media(max-width:767px){.sticky-bar{display:flex;}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media(min-width:768px){}
+
+
+
+@media(max-width:767px){}
 .btn{display:inline-flex;align-items:center;gap:8px;height:var(--tap);padding:0 24px;border-radius:var(--r);font-weight:700;font-size:0.9rem;text-decoration:none;white-space:nowrap;transition:all .22s;}
 .btn-white{background:#fff;color:var(--blue);}.btn-white:hover{transform:translateY(-1px);box-shadow:0 10px 28px rgba(0,0,0,0.2);}
 .btn-outline-wh{background:transparent;color:#fff;border:2px solid rgba(255,255,255,0.35);}.btn-outline-wh:hover{border-color:#fff;}
@@ -137,19 +137,65 @@ nav.primary{position:fixed;inset:0 0 auto;z-index:200;display:flex;align-items:c
 .pbc-h em{font-style:italic;}
 .pbc-sub{font-size:0.95rem;color:rgba(255,255,255,0.7);max-width:400px;margin:0 auto 28px;line-height:1.7;}
 .pbc-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+
+
+
+
+
+
+
+
+
+
+
+@media(min-width:768px){.post-hero{padding:130px 64px 56px;}.post-body{padding:60px 64px 72px;}.related{padding:60px 64px;}.post-bottom-cta{padding:80px 64px;}.related-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:767px){.post-bottom-cta{padding-bottom:96px;}.pbc-btns{flex-direction:column;align-items:stretch;}.pbc-btns a{justify-content:center;}}
+nav.primary{position:fixed;inset:0 0 auto;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 20px;height:60px;background:rgba(7,15,34,0.96);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,0.08);}
+.nav-logo{display:flex;align-items:center;height:60px;text-decoration:none;}
+.logo-img{height:30px;width:auto;display:block;flex-shrink:0;}
+.nav-links{display:none;align-items:center;gap:24px;}
+.nav-links a{color:rgba(255,255,255,0.55);text-decoration:none;font-size:0.82rem;font-weight:500;height:60px;display:inline-flex;align-items:center;border-bottom:2px solid transparent;transition:color .2s;}
+.nav-links a:hover,.nav-links a.active{color:#fff;}
+.nav-links a.active{border-bottom-color:#60a5fa;}
+.nav-cta-btn{display:none;align-items:center;background:#2563eb;color:#fff;padding:0 16px;height:36px;border-radius:8px;font-weight:700;font-size:0.8rem;text-decoration:none;}
+.nav-cta-btn:hover{background:#3b82f6;}
+.nav-right{display:flex;align-items:center;gap:8px;}
+.ham{display:flex;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:8px;width:44px;height:44px;}
+.ham span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;transition:all .3s;}
+.ham.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.ham.open span:nth-child(2){opacity:0;}
+.ham.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+#nav-drawer{display:none;position:fixed;top:60px;left:0;right:0;bottom:0;z-index:190;background:rgba(7,15,34,0.98);flex-direction:column;padding:24px;gap:4px;overflow-y:auto;}
+#nav-drawer.open{display:flex;}
+#nav-drawer a{color:rgba(255,255,255,0.8);text-decoration:none;font-size:1.05rem;font-weight:700;padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.07);display:block;}
+#nav-drawer .drawer-cta{margin-top:16px;background:#2563eb;color:#fff;text-align:center;border-radius:8px;border-bottom:none;padding:16px;display:block;}
+.sticky-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:180;background:rgba(11,22,48,0.98);border-top:1px solid rgba(255,255,255,0.1);padding:12px 16px;gap:10px;}
+.sticky-bar a{flex:1;display:flex;align-items:center;justify-content:center;height:48px;border-radius:8px;font-weight:700;font-size:0.85rem;text-decoration:none;}
+.sb-primary{background:#2563eb;color:#fff;}
+.sb-ghost{border:1px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.8);}
+.footer-logo-img{height:22px;width:auto;display:block;}
 footer{background:#03080f;padding:48px 24px 24px;border-top:1px solid rgba(255,255,255,0.05);}
 .footer-top{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-bottom:32px;}
-.footer-logo-row{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+.footer-logo-row{margin-bottom:10px;}
 .footer-desc{font-size:0.78rem;color:rgba(255,255,255,0.26);line-height:1.7;}
 .footer-col h4{font-size:0.6rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:12px;}
-.footer-col a{display:flex;font-size:0.78rem;color:rgba(255,255,255,0.26);text-decoration:none;margin-bottom:8px;min-height:30px;align-items:center;transition:color .2s;}
-.footer-col a:hover{color:var(--light);}
+.footer-col a{display:flex;align-items:center;font-size:0.78rem;color:rgba(255,255,255,0.26);text-decoration:none;margin-bottom:8px;min-height:30px;transition:color .2s;}
+.footer-col a:hover{color:#60a5fa;}
 .footer-bottom{border-top:1px solid rgba(255,255,255,0.06);padding-top:18px;display:flex;flex-direction:column;gap:8px;}
 .footer-copy{font-size:0.7rem;color:rgba(255,255,255,0.18);}
 .footer-legal{display:flex;gap:16px;}
 .footer-legal a{font-size:0.7rem;color:rgba(255,255,255,0.18);text-decoration:none;}
-@media(min-width:768px){.post-hero{padding:130px 64px 56px;}.post-body{padding:60px 64px 72px;}.related{padding:60px 64px;}.post-bottom-cta{padding:80px 64px;}.related-grid{grid-template-columns:repeat(2,1fr);}.footer-top{grid-template-columns:1.3fr 1fr 1fr 1fr;gap:36px;}.footer-bottom{flex-direction:row;justify-content:space-between;align-items:center;}footer{padding:56px 64px 28px;}}
-@media(max-width:767px){.post-bottom-cta{padding-bottom:96px;}.pbc-btns{flex-direction:column;align-items:stretch;}.pbc-btns a{justify-content:center;}}
+@media(min-width:768px){
+  nav.primary{padding:0 48px;}
+  .nav-links{display:flex;}
+  .nav-cta-btn{display:inline-flex;}
+  .ham{display:none;}
+  #nav-drawer{display:none !important;}
+  .footer-top{grid-template-columns:1.3fr 1fr 1fr 1fr;gap:36px;}
+  .footer-bottom{flex-direction:row;justify-content:space-between;align-items:center;}
+  footer{padding:56px 64px 28px;}
+}
+@media(max-width:767px){.sticky-bar{display:flex;}}
 </style>
 </head>
 <body>
@@ -166,12 +212,23 @@ footer{background:#03080f;padding:48px 24px 24px;border-top:1px solid rgba(255,2
     <a href="/work-with-us/">Work With Us</a>
     <a href="/ai-visibility-engine/">AI Visibility Engine</a>
     <a href="/trisearch-geo-engine/">GEO Engine</a>
-    <a href="/blog/" class="active">Blog</a>
+    <a href="/blog/">Blog</a>
   </div>
   <div class="nav-right">
     <a href="mailto:audit@trisearchintelligence.ai?subject=TriSearch%20Growth%20Audit%20Request" class="nav-cta-btn">Free Growth Audit →</a>
     <button class="ham" aria-label="Open menu" aria-expanded="false" onclick="toggleNav(this)"><span></span><span></span><span></span></button>
   </div>
+</nav>
+</header>
+<nav id="nav-drawer" aria-label="Mobile navigation">
+  <a href="/" onclick="closeNav()">Home</a>
+  <a href="/what-is-geo/" onclick="closeNav()">What is GEO?</a>
+  <a href="/growth-audit/" onclick="closeNav()">Free Growth Audit</a>
+  <a href="/work-with-us/" onclick="closeNav()">Work With Us</a>
+  <a href="/ai-visibility-engine/" onclick="closeNav()">AI Visibility Engine</a>
+  <a href="/trisearch-geo-engine/" onclick="closeNav()">GEO Engine</a>
+  <a href="/blog/" onclick="closeNav()">Blog</a>
+  <a href="mailto:audit@trisearchintelligence.ai?subject=TriSearch%20Growth%20Audit%20Request" class="drawer-cta" onclick="closeNav()">Get Your Free Growth Audit →</a>
 </nav>
 </header>
 <nav id="nav-drawer" aria-label="Mobile navigation" aria-hidden="true">
@@ -369,7 +426,7 @@ footer{background:#03080f;padding:48px 24px 24px;border-top:1px solid rgba(255,2
       <p class="footer-desc">TriSearch Intelligence optimizes your business across SEO, Paid Search, and GEO so you show up everywhere search happens.</p>
     </div>
     <nav class="footer-col"><h4>Site</h4><a href="/">Home</a><a href="/what-is-geo/">What is GEO?</a><a href="/growth-audit/">Free Growth Audit</a><a href="/work-with-us/">Work With Us</a><a href="/blog/">Blog</a></nav>
-    <nav class="footer-col"><h4>GEO Resources</h4><a href="/blog/what-is-generative-engine-optimization/">What is GEO?</a><a href="/what-is-geo/#geo-vs-seo">GEO vs. SEO</a><a href="/what-is-geo/#how-geo-works">How AI Engines Decide</a></nav>
+    <nav class="footer-col"><h4>Products</h4><a href="/ai-visibility-engine/">AI Visibility Engine</a><a href="/trisearch-geo-engine/">GEO Engine</a></nav>
     <nav class="footer-col"><h4>Company</h4><a href="#">About</a><a href="mailto:audit@trisearchintelligence.ai">Contact</a></nav>
   </div>
   <div class="footer-bottom">
