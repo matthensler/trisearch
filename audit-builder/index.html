@@ -422,79 +422,26 @@ Search for and investigate ALL of the following. Be thorough — this research d
 After your research, write a detailed intelligence brief covering what you actually found for each of the 12 audit signals. Be specific — cite actual page titles, missing elements, competitor names if visible, real gaps. This brief will be used by another analyst to produce the final scores.`;
 
   try{
-    // Phase 1: Research with web search
-    mEl.textContent="Searching the web for real data…";pEl.style.width="25%";
+    mEl.textContent="Researching domain...";pEl.style.width="30%";
+    const prompt=`You are a senior search strategist at TriSearch Intelligence. Research and score ${co} (${dom}), a ${CL.ind||"business"}.${ctx?" Context: "+ctx:""}
+
+Use your knowledge to score all 12 signals and produce specific actionable findings. Be honest — low scores should reflect real gaps.
+
+SCORING: 1-2=critical gap, 3-4=below average, 5-6=average, 7-8=strong, 9-10=exceptional
+
+Return ONLY valid JSON, starting with { and ending with }, no markdown:
+{"tech_seo":{"score":5,"notes":"One specific sentence."},"content_depth":{"score":5,"notes":"One specific sentence."},"backlinks":{"score":5,"notes":"One specific sentence."},"keyword_cov":{"score":5,"notes":"One specific sentence."},"ad_coverage":{"score":5,"notes":"One specific sentence."},"landing_pages":{"score":5,"notes":"One specific sentence."},"bidding":{"score":5,"notes":"One specific sentence."},"conversion":{"score":5,"notes":"One specific sentence."},"ai_citations":{"score":5,"notes":"One specific sentence."},"entity_clarity":{"score":5,"notes":"One specific sentence."},"snippets":{"score":5,"notes":"One specific sentence."},"authority":{"score":5,"notes":"One specific sentence."},"actions":[{"title":"P1 title for ${co}","body":"Problem. Solution."},{"title":"P2 title for ${co}","body":"Problem. Solution."},{"title":"P3 quick win for ${co}","body":"Problem. Solution."},{"title":"P4 growth for ${co}","body":"Problem. Solution."}],"analyst_summary":"Overall verdict. Most urgent opportunity. 90-day success vision."}`;
+
     const r1=await fetch("https://audit-proxy.matt-6a2.workers.dev",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({
       model:"claude-sonnet-4-20250514",
       max_tokens:4000,
       tools:[{"type":"web_search_20250305","name":"web_search"}],
-      messages:[{role:"user",content:researchPrompt}]
+      messages:[{role:"user",content:prompt}]
     })});
     const d1=await r1.json();
-    // Extract all text blocks from the research response
-    const researchFindings=(d1.content||[]).filter(b=>b.type==="text").map(b=>b.text).join("\n\n");
-    mEl.textContent="Analyzing findings…";pEl.style.width="60%";
-
-    // Phase 2: Score and analyze based on actual research
-    const scorePrompt=`You are the lead analyst at TriSearch Intelligence. A researcher just investigated ${co} (${dom}) and produced this intelligence brief:
-
----RESEARCH FINDINGS---
-${researchFindings}
----END FINDINGS---
-
-${ctx?"Client-provided context: "+ctx:""}
-
-Based ONLY on the actual research above (not generic assumptions), score ${co} across all 12 signals and produce the audit output.
-
-SCORING SCALE — be honest, calibrated, and specific:
-- 1-2: Virtually no presence or a critical structural failure
-- 3-4: Exists but significantly underperforming — clear gaps visible
-- 5-6: Average — functional but not competitive
-- 7-8: Strong — real investment, visible results
-- 9-10: Exceptional — industry-leading, reserve for genuinely impressive findings
-
-SIGNAL SCORING CRITERIA:
-- tech_seo (1-10): Core Web Vitals signals, crawlability, mobile, site architecture, indexing health
-- content_depth (1-10): Topical authority, page depth, query coverage, thin vs substantive content
-- backlinks (1-10): Domain authority, editorial link quality, link volume, anchor diversity  
-- keyword_cov (1-10): Organic ranking footprint breadth, long-tail presence, competitive gap
-- ad_coverage (1-10): Google Ads presence, branded + non-branded terms, ad copy sophistication
-- landing_pages (1-10): Service/product-specific pages, CTA clarity, conversion optimization
-- bidding (1-10): Campaign structure evidence, smart bidding, budget allocation sophistication
-- conversion (1-10): Tracking implementation, form presence, clear conversion paths
-- ai_citations (1-10): Likelihood of being cited in ChatGPT/Perplexity/AI Overviews for key queries
-- entity_clarity (1-10): Schema markup, GBP completeness, Wikipedia/Wikidata, structured data
-- snippets (1-10): Content structured for featured snippets — headers, lists, Q&A format, definitions
-- authority (1-10): Press mentions, brand searches, social signals, review volume and recency
-
-NOTES FORMAT: Each note must be ONE sharp sentence that cites a SPECIFIC finding from the research — a page name, a missing element, a competitor, a real number. Never write generic observations.
-
-ACTION ITEM RULES — these must be devastatingly specific to ${co}:
-- Priority 1: The single highest-ROI gap. Reference something specific found in the research. Make it feel urgent.
-- Priority 2: Second priority. Must address a DIFFERENT pillar than P1. Cite a specific gap.
-- Priority 3: A quick win — something executable in under 3 weeks. Be concrete about what to do.
-- Priority 4: A compounding long-term play. Name the specific opportunity and why it grows over time.
-- Titles: Must name the company or a specific gap — never generic phrases like "improve SEO"
-- Bodies: Exactly 2 sentences. Sentence 1 = the specific problem found. Sentence 2 = what to do and the expected outcome.
-
-ANALYST SUMMARY — 3 sentences only:
-1. One honest verdict on where ${co} stands overall, with a specific detail
-2. The single most urgent opportunity, named precisely
-3. A concrete picture of what success looks like in 90 days
-
-Respond ONLY with valid JSON. No markdown fences. No preamble. No explanation. Start with { and end with }.
-{"tech_seo":{"score":0,"notes":"Specific finding."},"content_depth":{"score":0,"notes":"Specific finding."},"backlinks":{"score":0,"notes":"Specific finding."},"keyword_cov":{"score":0,"notes":"Specific finding."},"ad_coverage":{"score":0,"notes":"Specific finding."},"landing_pages":{"score":0,"notes":"Specific finding."},"bidding":{"score":0,"notes":"Specific finding."},"conversion":{"score":0,"notes":"Specific finding."},"ai_citations":{"score":0,"notes":"Specific finding."},"entity_clarity":{"score":0,"notes":"Specific finding."},"snippets":{"score":0,"notes":"Specific finding."},"authority":{"score":0,"notes":"Specific finding."},"actions":[{"title":"Specific action for ${co}","body":"Specific problem found. Concrete next step and expected outcome."},{"title":"Specific action for ${co}","body":"Specific problem found. Concrete next step and expected outcome."},{"title":"Quick win for ${co}","body":"Specific easy fix. Do this week for fast result."},{"title":"Growth lever for ${co}","body":"Specific opportunity. Why it compounds over 90 days."}],"analyst_summary":"Honest verdict with specific detail. Most urgent opportunity named precisely. Concrete 90-day success picture."}`;
-
-    mEl.textContent="Scoring all 12 signals…";pEl.style.width="85%";
-    const r2=await fetch("https://audit-proxy.matt-6a2.workers.dev",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({
-      model:"claude-sonnet-4-20250514",
-      max_tokens:4000,
-      messages:[{role:"user",content:scorePrompt}]
-    })});
-    const d2=await r2.json();
-    const txt=d2.content?.find(b=>b.type==="text")?.text||"";
-    // Strip any accidental markdown fences
-    const clean=txt.replace(/^```json\s*/,"").replace(/^```\s*/,"").replace(/\s*```$/,"").trim();
+    pEl.style.width="90%";
+    const txt=(d1.content||[]).filter(b=>b.type==="text").map(b=>b.text).join("");
+    const clean=txt.replace(/```json/g,"").replace(/```/g,"").trim();
     const parsed=JSON.parse(clean);
     clearInterval(itv);pEl.style.width="100%";
     DIMS.flatMap(d=>d.sigs).forEach(s=>{
