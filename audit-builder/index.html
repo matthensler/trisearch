@@ -506,6 +506,8 @@ Respond ONLY with valid JSON. No markdown fences. No preamble. No explanation. S
     setTimeout(()=>{document.getElementById("p-load").classList.remove("active");buildSigs();buildActions();updateTotals();goStep(2);},300);
   }catch(e){
     clearInterval(itv);
+    console.error("Audit error:", e);
+    alert("Audit error: " + e.message + "\n\nCheck the browser console for details.");
     DIMS.flatMap(d=>d.sigs).forEach(s=>{SC[s.id]=5;NT[s.id]="Adjust manually.";});
     ACTIONS=[{title:"Priority action 1",body:"Describe the most urgent fix."},{title:"Priority action 2",body:"Describe the second priority."},{title:"Priority action 3",body:"Describe a quick win."},{title:"Priority action 4",body:"Describe a growth opportunity."}];
     setTimeout(()=>{document.getElementById("p-load").classList.remove("active");buildSigs();buildActions();updateTotals();goStep(2);},300);
