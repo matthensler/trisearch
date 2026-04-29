@@ -426,7 +426,7 @@ After your research, write a detailed intelligence brief covering what you actua
     mEl.textContent="Searching the web for real data…";pEl.style.width="25%";
     const r1=await fetch("https://audit-proxy.matt-6a2.workers.dev",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({
       model:"claude-sonnet-4-20250514",
-      max_tokens:3000,
+      max_tokens:4000,
       tools:[{"type":"web_search_20250305","name":"web_search"}],
       messages:[{role:"user",content:researchPrompt}]
     })});
@@ -488,7 +488,7 @@ Respond ONLY with valid JSON. No markdown fences. No preamble. No explanation. S
     mEl.textContent="Scoring all 12 signals…";pEl.style.width="85%";
     const r2=await fetch("https://audit-proxy.matt-6a2.workers.dev",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({
       model:"claude-sonnet-4-20250514",
-      max_tokens:2500,
+      max_tokens:4000,
       messages:[{role:"user",content:scorePrompt}]
     })});
     const d2=await r2.json();
