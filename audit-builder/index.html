@@ -7,19 +7,26 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js">
 // PASSWORD PROTECTION
-function checkPw() {
-  const val = document.getElementById("pw-input").value.trim();
-  if (val === "braxton2026") {
+const PW_HASH = "3e0887c8b3129d1926d0c9e28d1630aa4e38e7ab97ecf13c319888d44934d76d";
+async function hashStr(str) {
+  const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(str));
+  return Array.from(new Uint8Array(buf)).map(b=>b.toString(16).padStart(2,"0")).join("");
+}
+async function checkPw() {
+  const val = document.getElementById("pw-input").value;
+  const hash = await hashStr(val);
+  if (hash === PW_HASH) {
     document.getElementById("pw-screen").style.display = "none";
-    sessionStorage.setItem("ts_auth", "ok");
+    sessionStorage.setItem("ts_auth", hash);
   } else {
     document.getElementById("pw-error").textContent = "Incorrect password — try again.";
     document.getElementById("pw-input").value = "";
     document.getElementById("pw-input").focus();
   }
 }
-function initAuth() {
-  if (sessionStorage.getItem("ts_auth") === "ok") {
+async function initAuth() {
+  const saved = sessionStorage.getItem("ts_auth");
+  if (saved === PW_HASH) {
     document.getElementById("pw-screen").style.display = "none";
   }
 }
