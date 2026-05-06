@@ -234,6 +234,9 @@ img,svg{display:block;}a{color:inherit;}
 .pc-cadence{font-weight:700;font-size:0.95rem;color:#fff;}
 .pc-desc{font-size:0.82rem;color:rgba(255,255,255,0.45);line-height:1.68;}
 .pc-footnote{padding-top:11px;border-top:1px solid rgba(255,255,255,0.06);font-size:0.72rem;color:rgba(255,255,255,0.28);}
+.onboarding-card{background:rgba(10,102,194,0.07);border:1px solid rgba(10,102,194,0.2);border-radius:12px;padding:28px;margin-top:20px;}
+.pc-features{display:flex;flex-direction:column;gap:6px;margin:12px 0;}
+.pc-feat{font-size:0.8rem;color:rgba(255,255,255,0.55);}
 .pricing-note{background:rgba(37,99,235,0.07);border:1px solid rgba(59,130,246,0.15);border-radius:10px;padding:18px 22px;}
 .pricing-note p{font-size:0.84rem;color:rgba(255,255,255,0.5);line-height:1.7;}
 .pricing-note strong{color:rgba(255,255,255,0.8);}
@@ -519,39 +522,59 @@ footer{background:#03080f;padding:48px 24px 24px;border-top:1px solid rgba(255,2
 <!-- PRICING -->
 <section class="section dark" id="pricing" aria-labelledby="pricing-h">
   <div class="label">LinkedIn Newsletter Pricing</div>
-  <h2 class="display" id="pricing-h" style="margin-bottom:12px;">Simple, monthly programs.<br/><em>6-month minimum commitment.</em></h2>
-  <p style="font-size:0.97rem;line-height:1.8;color:var(--body);max-width:560px;margin-bottom:36px;">Choose the publishing cadence that fits your goals. More issues means more citable content — and faster GEO authority. All programs include full editorial strategy, AI-optimized content structure, and amplification.</p>
+  <h2 class="display" id="pricing-h" style="margin-bottom:12px;">Simple, newsletter programs.<br/><em>One-time onboarding. No lock-in after.</em></h2>
+  <p style="font-size:0.97rem;line-height:1.8;color:var(--body);max-width:560px;margin-bottom:36px;">Choose the publishing volume that fits your goals. More newsletters means more citable content, faster AI citation authority, and a stronger compounding signal over time.</p>
+
   <div class="pricing-grid">
 
     <div class="price-card">
       <div class="pc-bar" style="background:#0a66c2;"></div>
       <div class="pc-tier">Starter</div>
-      <div class="pc-price"><span class="pc-amount">$1,500</span><span class="pc-mo">/ month</span></div>
-      <div class="pc-cadence">1 newsletter per month</div>
-      <p class="pc-desc">One deeply researched, AI-optimized LinkedIn newsletter per month. Ideal for establishing a consistent presence and building early citation authority.</p>
-      <div class="pc-footnote">6-month minimum &nbsp;·&nbsp; $1,500 per issue<br/><span style="font-size:0.68rem;color:rgba(255,255,255,0.2);">$2,500 one-time onboarding fee</span></div>
+      <div class="pc-price"><span class="pc-amount">$6,000</span></div>
+      <div class="pc-cadence">6 newsletters</div>
+      <p class="pc-desc">Establish consistent authority and build foundational AI visibility. Ideal for brands getting started with GEO.</p>
+      <div class="pc-features">
+        <div class="pc-feat">✓ Consistent publishing cadence</div>
+        <div class="pc-feat">✓ AI-optimized content structure</div>
+        <div class="pc-feat">✓ Editorial strategy included</div>
+      </div>
+      <div class="pc-footnote">$1,000 per newsletter</div>
     </div>
 
-    <div class="price-card featured-card">
+    <div class="price-card">
       <div class="pc-bar" style="background:linear-gradient(90deg,#0a66c2,#60a5fa);"></div>
       <div class="pc-tier">Growth</div>
-      <div class="pc-price"><span class="pc-amount">$2,500</span><span class="pc-mo">/ month</span></div>
-      <div class="pc-cadence">2 newsletters per month</div>
-      <p class="pc-desc">Twice-monthly publishing builds authority faster and covers more of the topics AI engines are being asked about in your category.</p>
-      <div class="pc-footnote">6-month minimum &nbsp;·&nbsp; $1,250 per issue<br/><span style="font-size:0.68rem;color:rgba(255,255,255,0.2);">$2,500 one-time onboarding fee</span></div>
+      <div class="pc-price"><span class="pc-amount">$10,000</span></div>
+      <div class="pc-cadence">12 newsletters</div>
+      <p class="pc-desc">Accelerate publishing cadence, expand topic authority faster, and increase opportunities for AI citation and discovery.</p>
+      <div class="pc-features">
+        <div class="pc-feat">✓ Everything in Starter</div>
+        <div class="pc-feat">✓ Broader topic coverage</div>
+        <div class="pc-feat">✓ Faster authority compounding</div>
+      </div>
+      <div class="pc-footnote">~$833 per newsletter</div>
     </div>
 
     <div class="price-card">
       <div class="pc-bar" style="background:#60a5fa;"></div>
       <div class="pc-tier">Authority</div>
-      <div class="pc-price"><span class="pc-amount">$4,000</span><span class="pc-mo">/ month</span></div>
-      <div class="pc-cadence">4 newsletters per month</div>
-      <p class="pc-desc">Weekly publishing delivers the strongest GEO signal — consistent freshness, maximum topic coverage, and the fastest path to AI citation authority in your category.</p>
-      <div class="pc-footnote">6-month minimum &nbsp;·&nbsp; $1,000 per issue<br/><span style="font-size:0.68rem;color:rgba(255,255,255,0.2);">$2,500 one-time onboarding fee</span></div>
+      <div class="pc-price"><span class="pc-amount">$18,000</span></div>
+      <div class="pc-cadence">24 newsletters</div>
+      <p class="pc-desc">Near-weekly publishing cadence, maximum authority acceleration, and the strongest long-term AI visibility signal available.</p>
+      <div class="pc-features">
+        <div class="pc-feat">✓ Everything in Growth</div>
+        <div class="pc-feat">✓ Near-weekly publishing</div>
+        <div class="pc-feat">✓ Maximum citation surface area</div>
+      </div>
+      <div class="pc-footnote">$750 per newsletter</div>
     </div>
 
   </div>
-  <div class="pricing-note">
+
+  <div class="pricing-note" style="margin-top:16px;">
+    <p><strong>All programs include a $2,500 strategy and onboarding engagement</strong> — covering your AI visibility audit, editorial roadmap, topic clustering, executive POV alignment, and newsletter architecture. Paid once at the start.</p>
+  </div>
+  <div class="pricing-note" style="margin-top:10px;">
     <p><strong>Want the full picture?</strong> The AI Visibility Engine can run standalone or as part of a full TriSearch engagement — adding SEO, Paid Search, and monthly GEO audit tracking. <a href="/work-with-us/">Learn about full engagements →</a></p>
   </div>
 </section>
@@ -588,6 +611,8 @@ footer{background:#03080f;padding:48px 24px 24px;border-top:1px solid rgba(255,2
 </footer>
 
 <script>
+const ro=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('on');ro.unobserve(x.target);}}),{threshold:0.08,rootMargin:'0px 0px -32px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
 const nav=document.querySelector('nav.primary');
 window.addEventListener('scroll',()=>{nav.style.height=window.scrollY>60?'52px':'60px';},{passive:true});
 function toggleNav(btn){const d=document.getElementById('nav-drawer');const open=d.classList.toggle('open');btn.classList.toggle('open',open);btn.setAttribute('aria-expanded',String(open));document.body.style.overflow=open?'hidden':'';}

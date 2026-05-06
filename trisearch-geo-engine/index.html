@@ -534,6 +534,8 @@ footer{background:#03080f;padding:48px 24px 24px;border-top:1px solid rgba(255,2
 </footer>
 
 <script>
+const ro=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('on');ro.unobserve(x.target);}}),{threshold:0.08,rootMargin:'0px 0px -32px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
 const nav=document.querySelector('nav.primary');
 window.addEventListener('scroll',()=>{nav.style.height=window.scrollY>60?'52px':'60px';},{passive:true});
 function toggleNav(btn){const d=document.getElementById('nav-drawer');const open=d.classList.toggle('open');btn.classList.toggle('open',open);btn.setAttribute('aria-expanded',String(open));document.body.style.overflow=open?'hidden':'';}
